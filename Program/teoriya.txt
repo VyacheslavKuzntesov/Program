@@ -1,0 +1,279 @@
+﻿            ТИП         МИН                     МАКС
+            byte        0                       255
+            sbyte       -128                    127
+            short       -327628                 32767
+            ushort      0                       65535
+            int         -2147483648             2147483647
+            uint        0                       4294967295
+            long        -9223372036854775808    9223372036854775807
+            ulong       0                       18446744973709551615
+            float       -3.402823e38            3.402823e38
+            double      -1.797693e308           1.797693e308
+            decimal     -7.922816e28            7.922816e28
+            char        0                       255
+            bool        false                   true
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            char.IsControl('\t');
+            char.IsDigit('5');
+            char.IsLetter('x');
+            char.IsLower('e');
+            char.IsUpper('W');
+            char.IsSeparator('.');
+            char.IsSymbol('<');
+            char.IsWhiteSpace(' ');
+            char.ToLower('X');
+            char.ToUpper('x');
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            string a = null;
+            int? b = null; //nullable - помимо значений может принимать null для этого надо поставить знак вопроса после типа данных
+
+            b = b ?? 15;
+            //    ||
+            //    \/
+            //if (b == null) b = 15;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            \n
+            \t
+            \\
+            \0
+            \b
+            \r
+            \a
+            \f
+            \`
+            \v
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine(10L);             //L,l - long; D,d - double; UI - uint
+            string a = @"Hello \n World";       //@ перед ковычками компилятор воспринимает строку как есть
+            string @string = "";                //@ также позволяет использовать зарезервированные слова
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine(); //выводит
+            Console.ReadLine();  //ввод
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Console.Title = "Пример использования метода Title";
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Hello World");
+            Console.ReadLine();
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            string a = "15";
+            int b = Convert.ToInt32(a);
+            /* 
+               ToBoolean
+               ToByte
+               ToChar
+               ToDouble
+               ToInt16/32/64
+               ToString
+               ........
+            */
+            int c = Int32.Parse(a);
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            string a = "Hello World";
+            foreach(var i in a)
+            {
+                Console.WriteLine(i);
+            };
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            тип массива[] имя масива;
+            int[] ar = new int[5] { 1, 2, 3, 4, 5 };
+            int[] arr2;
+            int[] arr3 = new int[] {1,2,3};
+            int[] arr4 = {5,6,7,8};
+
+            многомерный массив
+            int[,] arr5 = new int[2,3] {{1,2},{3,4,5}}; - двумерный массив
+            int[,,] arr6 = new int[2,2,3] {{1,2},{3,4},{5,6,7}}
+
+            System.Array;
+
+             int[] arr = new int[5] { 1, 2, 3, 4, 5 };
+            int[] arr3 = new int[] { 1, 2, 3 };
+            int[] arr4 = { 5, 6, 7, 8 };
+
+
+            int[,] arr5 = new int[2, 3] { { 1, 2, 3 }, { 3, 4, 5 } };
+            /*
+            Array.GetLength
+            GetLoweBound / GetUpperBound
+
+            CopyTo
+            Clone System.Object[]
+            IndexOf LastIndexOf
+            Resize
+            Reverse
+            Sort
+
+            Sum
+            Anerage
+            Contains
+            Max, Min
+            Length
+            Rank
+            */
+
+            Array.Sort(arr);
+            int[] myArr = new int[5];
+            //myArr.CopyTo(arr, 2);  -вырезает
+            int[] arr2 = (int[])arr.Clone(); //Копирование
+
+            int[][] arr6 = new int[2][];
+            arr6[0] = new int[5] {1,2,3,4,5};
+            arr6[1] = new int[3] {9,7,6};
+            Console.WriteLine(arr6[0][3]);
+
+            foreach (int i in arr)
+            {
+                Console.WriteLine(i);
+            }
+            foreach (int i in arr2)
+            {
+                Console.WriteLine(i);
+            }
+
+            //string str = "Обычная строка";
+            //string str2 = "строка";
+            //string str3 = "Строка";
+            //string[] strArr = { "ШАГ", "шагаем", "бежим", "ем" };
+
+            //Console.WriteLine(str + " equals " + str2 + " : "+str.Equals(str2));
+            //Console.WriteLine(str2 + " CompareTo " + str3 + " : "+str2.CompareTo(str3));
+
+            /*
+            str.Length
+            CopyTo
+            Equals
+            Compare
+
+            str.Equals(str2);
+            String.Compare(str, str2);
+
+            CompareOrdinal
+            CompareTo
+            StartsWith / EndsWith
+
+            IndexOf / LastIndexOf
+            IndexOfAny / LastIndexOfAny
+            Substring
+
+            */
+
+            /*
+            Concate
+            ToLower / ToUpper
+            Replace
+            Contains
+            Insert
+            Remove
+            PadLeft / PadRight
+            Split
+            Join
+            Trim / TrimLeft / TrimRight
+
+            */
+            //string str1 = "Я ";
+            //string str2 = "учу ";
+            //string str3 = "C#";
+            //string str4 = str1 + str2 + str3;
+            //Console.WriteLine("{0} + {1} + {2} = {3}", str1, str2, str3, str4);
+
+            //str4 = str4.Replace("учу", "изучаю");
+            //Console.WriteLine(str4);
+
+            //str4 = str4.Insert(2, "упорно ").ToUpper();
+            //Console.WriteLine(str4);
+
+            //if (str4.Contains("упорно"))
+            //    Console.WriteLine("Учу таки упорно:)");
+            //else
+            //    Console.WriteLine("Учу как могу");
+
+            //str4 = str4.PadLeft(20, '*');
+            //str4 = str4.PadRight(30, '*');
+            //Console.WriteLine(str4);
+
+            //str4 = str4.TrimStart("*".ToCharArray());
+            //Console.WriteLine(str4);
+            //string[] strArr = str4.Split(" *".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            //foreach (string str in strArr)
+            //    Console.WriteLine(str);
+
+            //str4 = str4.Remove(9);
+            //str4 += "учусь";
+            //Console.WriteLine(str4);
+
+            //String.Format("text {index,size:spec}", str1);
+            /*
+            C - вывод символа валюты
+            D - возвращает целое число(только на целочисленные данные)
+            E - число ввиде експонеоты
+            F - число с запятой
+            G - возвращает целое число
+            N - число в локальных настройках
+            P - число с знаком %
+            X - 16 формат
+            */
+
+            //double a = 99989.987;
+            //int b = 9999;
+
+            //Console.WriteLine(String.Format("C Format: {0,10:C}",a));
+            //Console.WriteLine(String.Format("D Format: {0:D9}",b));
+            //Console.WriteLine(String.Format("E Format: {0:E}",a));
+            //Console.WriteLine(String.Format("F Format: {0:F2}",a));
+            //Console.WriteLine(String.Format("G Format: {0:G}",a));
+            //Console.WriteLine(String.Format("N Format: {0,15:N}",a));
+            //Console.WriteLine(String.Format("P Format: {0:P}",a));
+            //Console.WriteLine(String.Format("X Format: {0:X}", b));
+
+            //int number = 145;
+            //string word = "qwert";
+            //double number2 = 23.02;
+            //Console.WriteLine($"{number:C}, {word}, {number2}");
+            //Console.WriteLine($"Число 1 {(a>b ? "больше":"меньше")}");
+
+            /*
+            Append 
+            AppendFormat
+            Insert
+            Remove
+            Replace
+            CopyTo
+            ToString
+            Length
+            Capacity
+            Maxcapacity
+            */
+            //StringBuilder sb = new StringBuilder();
+            ////sb = "hello";
+            //sb.Append("hello");
+            //sb.AppendLine();
+            //sb.AppendLine();
+            //sb.Append("world");
+            //Console.WriteLine("Исходная строка");
+            //Console.WriteLine(sb);
+            //Console.WriteLine("Максимальное кол-во символов " + sb.Capacity);
+            //Console.WriteLine("Длина строки " + sb.Length);
+            //Console.WriteLine("Вставка строки");
+            //sb.Insert(7, "qwert");
+            //Console.WriteLine(sb);
+            //Console.WriteLine("Максимальное кол-во символов " + sb.Capacity);
+            //Console.WriteLine("Длина строки " + sb.Length);
+
+            //Console.WriteLine("Замена символа 'а' на 'z'");
+            //sb.Replace('o', 'z');
+            //Console.WriteLine(sb);
+
+            //Console.WriteLine("Удаление 10 символов начиная с 3 позиции");
+            //sb.Remove(3, 10);
+            //Console.WriteLine(sb);
+            //Console.WriteLine("Максимальное кол-во символов " + sb.Capacity);
+            //Console.WriteLine("Длина строки " + sb.Length);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
